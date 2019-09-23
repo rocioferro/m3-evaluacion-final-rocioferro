@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import CharacterDetail from './components/CharacterDetail'; 
 import Home from './components/Home';
+import { Switch, Route } from 'react-router-dom';
 
 
 const endpoint = 'https://rickandmortyapi.com/api/character/';
@@ -48,12 +49,18 @@ filterName(event) {
           <h1 className="app_title">Rick and Morty</h1>
         </header>
         <main>
+        <Switch>
+          <Route exact path="/" render={()=>
           <Home 
-            query={query}
-            filterName={this.filterName}
-            data={data}             
-            />
-          <CharacterDetail />
+          query={query}
+          filterName={this.filterName}
+          data={data}             
+          /> 
+        }
+          />
+          <Route path="/detail" component={CharacterDetail}/>
+        </Switch>
+
         </main>
         <footer>¡Footer!</footer>
       </div>
