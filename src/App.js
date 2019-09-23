@@ -70,7 +70,7 @@ filterName(event) {
             }/>
           </Switch>
         </main>
-        <footer>¡Footer!</footer>
+        <footer></footer>
       </div>
     );
   }

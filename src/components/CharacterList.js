@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CharacterCard from './CharacterCard';
 import {Link} from 'react-router-dom';
+import '../styles/CharacterList.scss'
 
 const CharacterList = props => {
   const {data, query} = props;
@@ -11,7 +12,7 @@ const CharacterList = props => {
         .filter(item=>item.name.toUpperCase().includes(query.toUpperCase()))
         .map(item=>
          <li className="rick_element" id={item.id} key={item.id}>
-           <Link to={`/detail/${item.id}`}>
+           <Link to={`/detail/${item.id}`} className="link">
           <CharacterCard
             image={item.image}
             name={item.name}
