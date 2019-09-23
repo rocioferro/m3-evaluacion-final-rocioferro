@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Filters from './components/Filters';
+import CharacterList from './components/CharacterList';
 
 
 const endpoint = 'https://rickandmortyapi.com/api/character/';
@@ -51,18 +52,10 @@ filterName(event) {
             query={query}
             filterName={this.filterName}
               />
-          
-          <ul className="rick_list">
-            {data
-              .filter(item=>item.name.toUpperCase().includes(query.toUpperCase()))
-              .map(item=> <li className="rick_element" id={item.id} key={item.id}>
-              <div className="rick_card">
-                <img src={item.image} alt="" className="rick_picture"></img>
-                <h2 className="rick_name">{item.name}</h2>
-                <h3 className="rick_species">{item.species}</h3>
-              </div>
-              </li>)}
-          </ul>
+          < CharacterList 
+            data={data}   
+            query={query}     
+            />
         </main>
         <footer></footer>
       </div>
