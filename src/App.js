@@ -1,8 +1,9 @@
 import React from 'react';
-import './App.css';
+import './styles/App.scss';
 import CharacterDetail from './components/CharacterDetail'; 
 import Home from './components/Home';
 import { Switch, Route } from 'react-router-dom';
+import logo from './logo.png'
 
 
 
@@ -49,6 +50,7 @@ filterName(event) {
       <div className="app">
         <header className="app_header">
           <h1 className="app_title">Rick and Morty</h1>
+          <img src={logo} alt="logo" className="logo_img"></img>
         </header>
         <main>
           <Switch>
