@@ -4,7 +4,10 @@ import PropTypes from 'prop-types';
 const Filter = props => {
   const {query, filterName} = props; 
   return (
-    <input type="text" className="input" value={query} onChange={filterName}></input>
+    <div className="input_container">
+      <label htmlFor="input">Busca un personaje: </label>
+      <input type="text" id="input" className="input" value={query} onChange={filterName}></input>
+    </div>
   ); 
 }
 
