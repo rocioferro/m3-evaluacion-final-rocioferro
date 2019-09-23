@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/Filters.scss'
 
 const Filter = props => {
   const {query, filterName} = props; 
   return (
     <div className="input_container">
-      <label htmlFor="input">Busca un personaje: </label>
+      <label htmlFor="input" className="input-label">Busca un personaje: </label>
       <input type="text" id="input" className="input" value={query} onChange={filterName}></input>
     </div>
   ); 
