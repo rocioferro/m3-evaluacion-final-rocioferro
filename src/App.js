@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Filters from './components/Filters';
-import CharacterList from './components/CharacterList';
+import CharacterDetail from './components/CharacterDetail'; 
+import Home from './components/Home';
 
 
 const endpoint = 'https://rickandmortyapi.com/api/character/';
@@ -48,16 +48,14 @@ filterName(event) {
           <h1 className="app_title">Rick and Morty</h1>
         </header>
         <main>
-          <Filters 
+          <Home 
             query={query}
             filterName={this.filterName}
-              />
-          < CharacterList 
-            data={data}   
-            query={query}     
+            data={data}             
             />
+          <CharacterDetail />
         </main>
-        <footer></footer>
+        <footer>¡Footer!</footer>
       </div>
     );
   }
