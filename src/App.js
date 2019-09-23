@@ -10,8 +10,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       data:[],
+      query: '',
     }
-  
+  this.filterName=this.filterName.bind(this);
   }
 
 componentDidMount() {
@@ -30,21 +31,29 @@ componentDidMount() {
      
   }
 
-
+filterName(event) {
+  const value = event.currentTarget.value
+  this.setState({
+    query:value
+  })
+}
 
   render() {
-    const {data} = this.state;
+    const {data, query } = this.state;
     return (
       <div className="app">
         <header className="app_header">
           <h1 className="app_title">Rick and Morty</h1>
         </header>
         <main>
+          <input type="text" className="input" value={query} onChange={this.filterName}></input>
           <ul className="rick_list">
-            {data.map(item=> <li className="rick_element" id={item.id}>
+            {data
+              .filter(item=>item.name.toUpperCase().includes(query.toUpperCase()))
+              .map(item=> <li className="rick_element" id={item.id} key={item.id}>
               <div className="rick_card">
                 <img src={item.image} alt="" className="rick_picture"></img>
-                <h2 className="rick_name">{item.name}</h2>ç
+                <h2 className="rick_name">{item.name}</h2>
                 <h3 className="rick_species">{item.species}</h3>
               </div>
               </li>)}
