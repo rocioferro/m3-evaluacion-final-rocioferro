@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Filters from './components/Filters';
 
 
 const endpoint = 'https://rickandmortyapi.com/api/character/';
@@ -46,7 +47,11 @@ filterName(event) {
           <h1 className="app_title">Rick and Morty</h1>
         </header>
         <main>
-          <input type="text" className="input" value={query} onChange={this.filterName}></input>
+          <Filters 
+            query={query}
+            filterName={this.filterName}
+              />
+          
           <ul className="rick_list">
             {data
               .filter(item=>item.name.toUpperCase().includes(query.toUpperCase()))
