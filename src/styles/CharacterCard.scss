@@ -1,16 +1,23 @@
 .rick_card {
   background-color: #35afc7;
-  width: 240px; 
+  width: 200px; 
+  height: 350px; 
   padding-top:10px; 
   border-radius: 7px; 
   border: 1px solid black;
+  @media(min-width:768px) {
+    width: 240px;
+  }
 
 }
 
 .rick_picture {
   border-radius: 7px;
   border: 0.8px solid black;
-  height: 220px; 
+  height: 180px; 
+  @media(min-width:768px) {
+    height: 220px;
+  }
 }
 
 .rick_species {
