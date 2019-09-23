@@ -5,6 +5,7 @@ const CharacterDetail = props => {
   const {routerProps, data} = props; 
   const ID = parseInt(routerProps.match.params.id);
   const rick = data.find(data => data.id === ID);
+  if (rick) {
   return(
     <React.Fragment>
       <div className="rick_card">
@@ -18,7 +19,16 @@ const CharacterDetail = props => {
 
     <Link to="/">Volver</Link>
     </React.Fragment>
-  );
+    );
+    } else {
+      return (
+        <React.Fragment>
+          <h3 className="error_warning">La página que buscas no existe</h3>
+          <Link to="/">Volver</Link>
+        </React.Fragment> 
+      );
+    }
+  
 }
 
 
