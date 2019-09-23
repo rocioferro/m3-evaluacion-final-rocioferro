@@ -1,0 +1,11 @@
+.rick_list {
+  list-style: none; 
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.link {
+  text-decoration: none; 
+  color: black; 
+}
+// style={{ textDecoration: 'none', color: 'black'}}
