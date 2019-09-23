@@ -49,18 +49,22 @@ filterName(event) {
           <h1 className="app_title">Rick and Morty</h1>
         </header>
         <main>
-        <Switch>
-          <Route exact path="/" render={()=>
-          <Home 
-          query={query}
-          filterName={this.filterName}
-          data={data}             
-          /> 
-        }
-          />
-          <Route path="/detail" component={CharacterDetail}/>
-        </Switch>
-
+          <Switch>
+           <Route exact path="/" render={()=>
+              <Home 
+                query={query}
+                filterName={this.filterName}
+                data={data}             
+             /> 
+           }/>
+           <Route path="/detail/:id" render={
+              routerProps=>
+              <CharacterDetail
+                routerProps={routerProps}
+                data={data}
+              />
+            }/>
+          </Switch>
         </main>
         <footer>¡Footer!</footer>
       </div>

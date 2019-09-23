@@ -11,7 +11,7 @@ const CharacterList = props => {
         .filter(item=>item.name.toUpperCase().includes(query.toUpperCase()))
         .map(item=>
          <li className="rick_element" id={item.id} key={item.id}>
-           <Link to="/detail">
+           <Link to={`/detail/${item.id}`}>
           <CharacterCard
             image={item.image}
             name={item.name}
