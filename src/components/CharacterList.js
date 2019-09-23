@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CharacterCard from './CharacterCard';
 
 const CharacterList = props => {
   const {data, query} = props;
@@ -9,18 +10,18 @@ const CharacterList = props => {
         .filter(item=>item.name.toUpperCase().includes(query.toUpperCase()))
         .map(item=>
          <li className="rick_element" id={item.id} key={item.id}>
-          <div className="rick_card">
-            <img src={item.image} alt="" className="rick_picture"></img>
-            <h2 className="rick_name">{item.name}</h2>
-            <h3 className="rick_species">{item.species}</h3>
-          </div>
+          <CharacterCard
+            image={item.image}
+            name={item.name}
+            species={item.species}
+            />
          </li>)}
     </ul>
   );
 }
 
 CharacterList.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.objects).isRequired ,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired ,
   query: PropTypes.string.isRequired, 
 }
 
