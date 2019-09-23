@@ -13,7 +13,7 @@ const CharacterDetail = props => {
         <h3 className="rick_species">Status: {rick.status}</h3>
         <h3 className="rick_species">Species: {rick.species}</h3>
         <h3 className="rick_species">Origin: {rick.origin.name}</h3>
-        <h3 className="rick_species">Episodes: {rick.species}</h3>
+        <h3 className="rick_species">Episodes: {rick.episode.length}</h3>
       </div>
 
     <Link to="/">Volver</Link>
