@@ -16,6 +16,13 @@ const Filter = props => {
           <option value="Male">Male</option>
           <option value="unknown">Unknown</option>
         </select> 
+
+      <label htmlFor="protagonista" className="radio_label">
+        <input type="radio" id="protagonista" name="role" value="protagonista" className="role_radio"/>Protagonistas
+      </label>
+      <label htmlFor="extra" className="radio_label">
+        <input type="radio" id="extra" name="role" value="extra"className="role_radio"/>Extras
+      </label>
     </div>
     </React.Fragment>
   ); 
