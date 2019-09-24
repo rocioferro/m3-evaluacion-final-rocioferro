@@ -5,10 +5,16 @@ import {Link} from 'react-router-dom';
 import '../styles/CharacterList.scss'
 
 const CharacterList = props => {
-  const {data, query} = props;
+  const {data, query, gender} = props;
   return(
     <ul className="rick_list">
       {data
+        .filter(item=> 
+          {if(gender==='all gender') {
+            return (item)
+          } else {
+            return item.gender === gender
+          }})
         .filter(item=>item.name.toUpperCase().includes(query.toUpperCase()))
         .map(item=>
          <li className="rick_element" id={item.id} key={item.id}>

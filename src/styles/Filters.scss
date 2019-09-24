@@ -1,13 +1,30 @@
-.input_container {
+.filters_container {
   padding:20px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
 }
 
 .input-label {
   color:  #35afc7; 
+  // padding-left: 15px; 
 }
 
 .input {
   border: 1.5px solid #35afc7;
   background-color: inherit;
   color: white;
+  margin: 0 15px;
+}
+
+.select-label {
+  color:  #35afc7; 
+  margin-left: 15px;
+}
+
+.select {
+  border: 1.5px solid #35afc7;
+  background-color: inherit;
+  color: white;
+  margin: 0 15px;
 }

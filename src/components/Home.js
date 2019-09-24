@@ -4,16 +4,18 @@ import CharacterList from './CharacterList';
 import PropTypes from 'prop-types';
 
 const Home = props => {
-  const {query, filterName, data} = props; 
+  const {query, filterName, data, gender, chooseGender} = props; 
   return (
     <React.Fragment>
       <Filters 
         query={query}
         filterName={filterName}
+        chooseGender={chooseGender}
       />
       <CharacterList 
         data={data}   
-        query={query}     
+        query={query}  
+        gender={gender}  
       />
   </React.Fragment>
   ); 

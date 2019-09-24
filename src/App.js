@@ -16,8 +16,10 @@ class App extends React.Component {
     this.state = {
       data:[],
       query: '',
+      gender: 'all gender',
     }
   this.filterName=this.filterName.bind(this);
+  this.chooseGender=this.chooseGender.bind(this);
   }
 
 componentDidMount() {
@@ -33,8 +35,14 @@ componentDidMount() {
         })
       }, 
  );
-     
-  }
+}
+
+chooseGender(event) {
+  const gender = event.currentTarget.value
+  this.setState({
+    gender: gender
+  })
+}
 
 filterName(event) {
   const value = event.currentTarget.value
@@ -44,7 +52,7 @@ filterName(event) {
 }
 
   render() {
-    const {data, query } = this.state;
+    const {data, query, gender } = this.state;
     return (
       <div className="app">
         <header className="app_header">
@@ -57,7 +65,9 @@ filterName(event) {
               <Home 
                 query={query}
                 filterName={this.filterName}
-                data={data}             
+                data={data} 
+                gender={gender}
+                chooseGender={this.chooseGender}
              /> 
            }/>
            <Route path="/detail/:id" render={
