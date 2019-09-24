@@ -28,7 +28,7 @@ const CharacterDetail = props => {
       return (
         <React.Fragment>
           <h3 className="error_warning">La página que buscas no existe</h3>
-          <Link to="/">Volver</Link>
+          <Link to="/" className="detail_link">Volver</Link>
         </React.Fragment> 
       );
     }
