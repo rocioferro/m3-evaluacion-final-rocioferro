@@ -1,0 +1,35 @@
+
+
+.rick_card-detail {
+  margin: 0 auto; 
+  align-items: center;
+  background-color: #35afc7;
+  width: 270px; 
+  height: 470px; 
+  padding-top:10px; 
+  border-radius: 7px; 
+  border: 1px solid black;
+  @media(min-width:768px) {
+    width: 240px;
+  }
+
+}
+
+.rick_picture-detail {
+  border-radius: 7px;
+  border: 0.8px solid black;
+  height: 180px; 
+  @media(min-width:768px) {
+    height: 220px;
+  }
+}
+
+.link_container {
+  padding: 20px; 
+}
+.detail_link {
+  text-transform: uppercase;
+  
+  text-decoration: none;
+  color: #35afc7;
+}

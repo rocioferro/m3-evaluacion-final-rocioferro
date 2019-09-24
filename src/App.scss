@@ -7,6 +7,9 @@
   
   
 }
+.main {
+  text-align: center; 
+}
 
 .app_title {
   height: 1px;
@@ -19,4 +22,14 @@
     width: 400px;
   }
 }
-  
+
+.footer {
+  display: flex; 
+  justify-content: flex-end;
+  height: 50px; 
+  padding-top: 20px; 
+  padding-right: 20px; 
+  color: #35afc7;
+  font-weight: bold;
+  border-top: 0.8px solid black;
+}

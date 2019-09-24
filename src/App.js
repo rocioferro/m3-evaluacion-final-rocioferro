@@ -52,7 +52,7 @@ filterName(event) {
           <h1 className="app_title">Rick and Morty</h1>
           <img src={logo} alt="logo" className="logo_img"></img>
         </header>
-        <main>
+        <main className="main">
           <Switch>
            <Route exact path="/" render={()=>
               <Home 
@@ -70,7 +70,7 @@ filterName(event) {
             }/>
           </Switch>
         </main>
-        <footer></footer>
+        <footer className="footer">&copy; 2019</footer>
       </div>
     );
   }
