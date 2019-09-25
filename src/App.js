@@ -4,10 +4,9 @@ import CharacterDetail from './components/CharacterDetail';
 import Home from './components/Home';
 import { Switch, Route } from 'react-router-dom';
 import logo from './logo.png'
+import {getFetch} from './services/getFetch';
 
 
-
-const endpoint = 'https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json'
 
 
 class App extends React.Component {
@@ -31,8 +30,7 @@ componentDidMount() {
 }
 
   getData ()  {
-    fetch(endpoint)
-      .then(res => res.json())
+    getFetch()
       .then(result=> {
         this.setState({
           data:result.results
