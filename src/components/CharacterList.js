@@ -5,22 +5,23 @@ import {Link} from 'react-router-dom';
 import '../styles/CharacterList.scss'
 
 const CharacterList = props => {
-  const {data, query, gender, role} = props;
+  const {data, query, gender, role, species} = props;
   return(
     <ul className="rick_list">
       {data
-        .filter(item=>
-          {if (role==='todos') {
+        .filter(item=>item.species.toUpperCase().includes(species.toUpperCase())) 
+        // eslint-disable-next-line array-callback-return
+        .filter(item=> {if 
+            (role==='todos') {
             return (item)
            } else if ( role === 'protagonista') {
               return (item.episode.length > 25)
            } else if (role==='principal') {
              return ( item.episode.length > 5)
            } else if ( role === 'extra') {
-             return (item.episode.length < 5)
+             return (item.episode.length < 5);
            }
-        
-        } )
+        })
         .filter(item=> 
           {if(gender==='all gender') {
             return (item)

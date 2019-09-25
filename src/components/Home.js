@@ -4,7 +4,7 @@ import CharacterList from './CharacterList';
 import PropTypes from 'prop-types';
 
 const Home = props => {
-  const {query, filterName, data, gender, chooseGender, getRole, role} = props; 
+  const {query, filterName, data, gender, chooseGender, getRole, role, getSpecies, species} = props; 
   return (
     <React.Fragment>
       <Filters 
@@ -12,12 +12,14 @@ const Home = props => {
         filterName={filterName}
         chooseGender={chooseGender}
         getRole={getRole}
+        getSpecies={getSpecies}
       />
       <CharacterList 
         data={data}   
         query={query}  
         gender={gender}
         role={role}  
+        species={species}
       />
   </React.Fragment>
   ); 
@@ -31,6 +33,7 @@ Home.propTypes = {
   gender: PropTypes.string.isRequired,
   getRole: PropTypes.func.isRequired,
   role: PropTypes.string.isRequired,
+  
 }
 
 

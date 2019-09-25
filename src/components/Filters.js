@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../styles/Filters.scss'
 
 const Filter = props => {
-  const {query, filterName, chooseGender, getRole} = props; 
+  const {query, filterName, chooseGender, getRole, species, getSpecies} = props; 
   return ( <React.Fragment>
     <div className="filters_container">
       <label htmlFor="input" className="input-label">Filtra por personaje: </label>
@@ -29,6 +29,9 @@ const Filter = props => {
       <label htmlFor="extra" className="radio_label">
         <input type="radio" id="extra" name="role" value="extra"className="role_radio" onClick={getRole}/>Extras
       </label>
+
+      <label htmlFor="input" className="input-label">Filtra por especie: </label>
+      <input type="text" id="input" className="input" value={species} onChange={getSpecies}></input>
     </div>
     </React.Fragment>
   ); 
