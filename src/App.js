@@ -18,10 +18,12 @@ class App extends React.Component {
       query: '',
       gender: 'all gender',
       role: 'todos',
+      type:'',
     }
   this.filterName=this.filterName.bind(this);
   this.chooseGender=this.chooseGender.bind(this);
   this.getRole=this.getRole.bind(this);
+  this.chooseType=this.chooseType.bind(this);
   }
 
 componentDidMount() {
@@ -59,9 +61,15 @@ getRole(event) {
     role:value
   })
 }
+chooseType (event) {
+ const value = event.currentTarget.value
+ this.setState({
+   type:value
+ })
+}
 
   render() {
-    const {data, query, gender, role } = this.state;
+    const {data, query, gender, role, type } = this.state;
     return (
       <div className="app">
         <header className="app_header">
@@ -79,6 +87,9 @@ getRole(event) {
                 chooseGender={this.chooseGender}
                 role={role}
                 getRole={this.getRole}
+                type={type}
+                chooseType={this.chooseType}
+
              /> 
            }/>
            <Route path="/detail/:id" render={

@@ -5,10 +5,11 @@ import {Link} from 'react-router-dom';
 import '../styles/CharacterList.scss'
 
 const CharacterList = props => {
-  const {data, query, gender, role} = props;
+  const {data, query, gender, role, type} = props;
   return(
     <ul className="rick_list">
       {data
+        .filter(item=> item.type.toUpperCase().includes(type.toUpperCase()))
         .filter(item=> 
           {if (role==='todos') {
             return (item)
@@ -35,6 +36,7 @@ const CharacterList = props => {
             image={item.image}
             name={item.name}
             species={item.species}
+            type={item.type}
             />
             </Link>
          </li>)}
@@ -47,6 +49,7 @@ CharacterList.propTypes = {
   query: PropTypes.string.isRequired, 
   gender: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 }
 
 
