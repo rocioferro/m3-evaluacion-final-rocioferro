@@ -9,18 +9,18 @@ const CharacterList = props => {
   return(
     <ul className="rick_list">
       {data
-        .filter(item=>
+        .filter(item=> 
           {if (role==='todos') {
             return (item)
-           } else if ( role === 'protagonista') {
+           } else 
+           if ( role === 'protagonista') {
               return (item.episode.length > 25)
            } else if (role==='principal') {
              return ( item.episode.length > 5)
-           } else if ( role === 'extra') {
-             return (item.episode.length < 5)
-           }
+           } else  { return (item.episode.length < 5)
+           } 
         
-        } )
+        } ) 
         .filter(item=> 
           {if(gender==='all gender') {
             return (item)
