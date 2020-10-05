@@ -1,34 +1,36 @@
 .filters_container {
   padding:20px;
   display: flex;
-  justify-content: center; 
+  justify-content: space-around;
   align-items: center; 
 }
 
-.input-label {
-  color:  #35afc7; 
-  // padding-left: 15px; 
+.filters_section{
+  display: flex;
+  flex-direction: column;
+}
+
+.filters_divider{
+  margin-bottom: 8px;
+}
+
+.label {
+  color:  #a9d4e8;
+}
+
+.radio_label{
+  padding-left: 5px;
+  margin-bottom: 10px;
 }
 
 .input {
-  border: 1.5px solid #35afc7;
+  border: 1.5px solid #a9d4e8;
   background-color: inherit;
   color: white;
   margin: 0 15px;
 }
 
-.select-label {
-  color:  #35afc7; 
-  margin-left: 15px;
-}
-
-.select {
-  border: 1.5px solid #35afc7;
-  background-color: inherit;
-  color: white;
-  margin: 0 15px;
-}
-
-.radio_label {
-  color:  #35afc7; 
+.select{
+  min-width: 145px;
+  margin-right: -6px;
 }

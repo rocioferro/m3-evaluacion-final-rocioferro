@@ -1,11 +1,11 @@
 
 
 .rick_card-detail {
-  margin: 0 auto; 
+  margin: 20px auto; 
   align-items: center;
-  background-color: #35afc7;
+  background-color: #a9d4e8;
   width: 270px; 
-  height: 470px; 
+  min-height: 470px; 
   padding-top:10px; 
   border-radius: 7px; 
   border: 1px solid black;
@@ -29,15 +29,11 @@
 }
 .detail_link {
   text-transform: uppercase;
-  
   text-decoration: none;
-  color: #35afc7;
+  font-weight: bold;
+  color: #a9d4e8;
 }
 
 .error_warning {
-  color: #35afc7;
-}
-
-.error_link {
-  
+  color: #a9d4e8;
 }
